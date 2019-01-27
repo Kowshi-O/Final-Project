@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Completed To-Dos
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-4">Completed Tasks! </h1>
+    <br>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <th>Task</th>
+            <th>Due Date</th>
+            <th>Task Type</th>
+            <th>Started On</th>
+            <th>Completed?</th>
+        </thead>
+        <tbody class="tbody-light">
+            {% for tasks in completed %}
+            <tr>
+                <td>{{ tasks.task }} </td>
+                <td>{{ tasks.duedate }}</td>
+                <td>{{ tasks.taskType }}</td>
+                <td>{{ tasks.createdOn }}</td>
+                <td>{{ tasks.compYN }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

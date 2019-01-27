@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Todo
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-4"> Add To-Do </h1>
+    <br>
+    <form action="/todo" method="post">
+
+     <div class="form-group">
+        <label for="formGroupExampleInput">Task:</label> <br>
+        <input autofocus name="task" class="form-control" placeholder="type here.......     " type="text"/>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Due Date (optional): </label> <br>
+        <input name="due" class="form-control" type="date"/>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Task Type: </label> <br>
+
+        <select class="form-control" name="type">
+            <option selected disabled>Choose a Task Type</option>
+            <option value="Long Term Goal">Long Term Goals</option>
+            <option value="Quick Task">Quick Tasks</option>
+            <option value="School Assessment/Project">School Assessments/Projects</option>
+            <option value="Work Deadline">Work Deadlines</option>
+            <option value="Life Goal">Life Goals</option>
+            <option value="University Projects">University Projects</option>
+            <option value="Ambition">Ambitions</option>
+            <option value="Reminder">Reminders</option>
+            <option value="Event">Events</option>
+            <option value="Health">Health</option>
+
+
+        </select>
+        </div>
+        <br>
+        <button class="btn btn-outline-primary" type="submit">Add Item</button>
+        <br><br><br><br>
+    </form>
+    <h1 class="display-4"> Add Appointment </h1>
+    <br>
+
+    <form action="/appointment" method="post">
+
+     <div class="form-group">
+        <label for="formGroupExampleInput">Place/Description:</label> <br>
+        <input autofocus name="placeA" class="form-control" placeholder="type here.......     " type="text"/>
+      </div>
+
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Date: </label> <br>
+        <input name="dateA" class="form-control" type="date"/>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Time: </label> <small class="text-muted">eg. 9:30 AM</small><br>
+        <input type="time" class="form-control" name="timeA">
+        </div>
+        <br>
+        <button class="btn btn-outline-primary" type="submit">Schedule Appointment</button>
+    </form>
+
+
+
+{% endblock %}

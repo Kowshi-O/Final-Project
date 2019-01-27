@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Complete/Delete
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-4">Tasks:</h1>
+    <br>
+    <form action="/delete" method="post">
+        <h1 class="h2">Delete Task</h1>
+
+        <label for="ident">Provide the task number*</label>
+        <input class="form-control" type="number" name="delkey" placeholder="eg. 4"> <input class="btn btn-dark" type="submit" value="Delete">
+        <br> <br> <small class="text-muted">* The task number is provided in the '#' column. It is unique for every user's tasks.</small>
+    </form>
+    <form action="/tick" method="post">
+        <h1 class="h2">Complete Task</h1>
+
+        <label for="ident">Provide the task number*</label>
+        <input class="form-control" type="number" name="compkey" placeholder="eg. 4"> <input class="btn btn-dark" type="submit" value="Complete">
+        <br> <br> <small class="text-muted">* The task number is provided in the '#' column. It is unique for every user's tasks.</small>
+    </form>
+    <br><br><br><br>
+    <h1 class="display-4">Appointments:</h1>
+    <br>
+    <form action="/deleteA" method="post">
+        <h1 class="h2">Delete/Finish Appointment</h1>
+        <label for="ident">Provide the Appointment number*</label>
+        <input class="form-control" type="number" name="appdel" placeholder="eg. 4"> <input class="btn btn-dark" type="submit" value="Delete/Finish">
+        <br> <br> <small class="text-muted">* The task number is provided in the '#' column. It is unique for every user's tasks.</small>
+    </form>
+
+
+{% endblock %}
